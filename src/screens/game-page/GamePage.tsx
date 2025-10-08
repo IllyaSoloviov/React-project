@@ -1,9 +1,9 @@
-import { useParams } from "react-router-dom";
-import { useGameDetailsQuery } from "@/hooks/usePopularGamesQuery"; // Убедитесь, что хук называется так
+import {useParams} from "react-router-dom";
+import {useGameDetailsQuery} from "@/hooks/usePopularGamesQuery"; // Убедитесь, что хук называется так
 
 const GamePage = () => {
-    const { id } = useParams<{ id: string }>();
-    const { data: game, isLoading, error } = useGameDetailsQuery(id!);
+    const {id} = useParams<{ id: string }>();
+    const {data: game, isLoading, error} = useGameDetailsQuery(id!);
 
     if (isLoading) {
         return <div className="flex justify-center items-center h-screen text-text-secondary">loading...</div>;
@@ -21,7 +21,8 @@ const GamePage = () => {
                         alt={game.name}
                         className="w-full h-64 md:h-96 xl:h-128 2xl:h-[30rem] object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-bg-secondary via-bg-secondary/70 to-transparent" />
+                    <div
+                        className="absolute inset-0 bg-gradient-to-t from-bg-secondary via-bg-secondary/70 to-transparent"/>
                     <div className="absolute bottom-0 left-0 p-6 md:p-8">
                         <h1 className="text-4xl md:text-5xl font-extrabold text-text tracking-tight">{game.name}</h1>
                         <p className="text-text-secondary mt-2 text-lg">

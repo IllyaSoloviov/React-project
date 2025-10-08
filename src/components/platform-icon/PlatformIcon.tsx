@@ -13,7 +13,7 @@ interface PlatformIconProps {
 const PlatformIcon = ({ slug }: PlatformIconProps) => {
 
     const iconProps = {
-        className: "w-4 h-4 text-gray-400 group-hover:text-white transition-colors"
+        className: "w-5 h-5 text-text hover:text-text-secondary transition-colors"
     };
 
     switch (slug) {

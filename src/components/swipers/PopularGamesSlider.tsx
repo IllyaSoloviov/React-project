@@ -11,15 +11,17 @@ import {ArrowSvg} from "@/assets/icons/Arrow.svg.tsx";
 import PlatformIcon from "@/components/platform-icon/PlatformIcon.tsx";
 
 
-
 const PopularGamesSlider = () => {
     const {data: games, isLoading} = useGamesQuery("-rating,-ratings_count", 9);
 
     if (isLoading) return <div>Loading...</div>;
 
+
+
     return (
-        <div className="grid grid-cols-[auto_1fr_auto] grid-rows-[auto_1fr_auto] items-center gap-1 justify-items-center">
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-transparent bg-clip-text col-start-2 col-end-3 row-start-1 row-end-2 justify-self-start">
+        <div
+            className="grid grid-cols-[auto_1fr_auto] grid-rows-[auto_1fr_auto] items-center gap-1 justify-items-center">
+            <h2 className="mx-4 text-3xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-transparent bg-clip-text col-start-2 col-end-3 row-start-1 row-end-2 justify-self-start">
                 Popular games
             </h2>
 
@@ -39,7 +41,7 @@ const PopularGamesSlider = () => {
             >
                 <ArrowSvg className="w-10 h-20 rotate-180"/>
             </button>
-
+            {/*-bottom-1/4*/}
             <Swiper
                 modules={[Navigation, Pagination]}
                 navigation={{nextEl: '.custom-next', prevEl: '.custom-prev'}}
@@ -56,51 +58,58 @@ const PopularGamesSlider = () => {
             >
                 {games?.map((game: Game) => (
                     <SwiperSlide key={game.id} className="rounded-lg overflow-hidden">
-                        <div
-                            className="mt-3 mb-10 mx-4 relative group rounded-xl shadow-xl/60 overflow-hidden aspect-[3/4]">
-                            <img
-                                src={game.background_image}
-                                alt={game.name}
-                                className="w-full h-full object-cover shadow-xl/30"
-                            />
+                        <div className="mt-3 mb-10 mx-4 relative group rounded-xl shadow-xl/60 overflow-hidden aspect-[3/4]">
+                            <Link to={`/game/${game.id}`}>
+                                <img
+                                    src={game.background_image}
+                                    alt={game.name}
+                                    className="w-full h-full object-cover"
+                                />
 
-                            <div
-                                className="absolute bottom-0 left-0 w-full h-0 bg-black/60 text-white overflow-hidden
-                                           group-hover:h-full transition-all duration-500 ease-in-out
-                                           flex flex-col items-center justify-end gap-4 p-4">
+                                <div className="absolute -bottom-1/4 left-0 w-full h-1/2 bg-bg/65 text-white overflow-hidden
+                                           group-hover:bottom-0 transition-all duration-500 ease-in-out
+                                           flex flex-col gap-2">
+                                    <div className="w-full flex-1 flex items-center justify-center px-4 py-1">
+                                        <h3 className="text-2xl w-full text-text font-semibold px-10 py-1 my-1 rounded-md text-center bg-bg/65">{game.name}</h3>
+                                    </div>
+                                    <div className="w-full flex-1 flex flex-col justify-around px-4">
+                                        <div className="flex items-center justify-between w-full">
+                                            {game.parent_platforms?.length > 0 && (
+                                                <div
+                                                    className="flex gap-3 items-self-start max-w-1/2 px-3 py-1 rounded-md  bg-bg/65">
+                                                    {game.parent_platforms.map(({platform}) => (
+                                                        <PlatformIcon key={platform.id} slug={platform.slug}/>
+                                                    ))}
+                                                </div>
+                                            )}
 
-                                <h3 className="text-lg text-text font-semibold">{game.name}</h3>
-
-                                {game.released && (
-                                    <p className="text-sm text-gray-300">Released: {game.released}</p>
-                                )}
-
-
-                                {game.genres?.length > 0 && (
-                                    <div className="flex flex-wrap gap-2 justify-center">
-                                        {game.genres.map((genre) => (
-                                            <span key={genre.id}
-                                                  className="text-xs bg-gray-700 px-2 py-1 rounded-md">
+                                            {game.genres?.length > 0 && (
+                                                <div className="flex flex-wrap gap-2 justify-start max-w-1/2 ">
+                                                    {game.genres.map((genre) => (
+                                                        <span key={genre.id}
+                                                              className="text-xs text-text-span px-3 py-1 rounded-md  bg-bg-span/33">
                                                 {genre.name}
                                             </span>
-                                        ))}
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="flex items-center justify-between w-full">
+                                            {game.released && (
+                                                <div
+                                                    className="text-sm text-text-secondary font-normal px-3 py-1 rounded-md  bg-bg/65">
+                                                    Release Date: <span className={'text-text font-medium'}>
+                                            {new Date(game.released).toLocaleDateString('En-en', {
+                                                year: 'numeric',
+                                                month: 'short',
+                                                day: 'numeric'
+                                            })}</span>
+                                                </div>
+                                            )}
+                                        </div>
                                     </div>
-                                )}
-
-                                {game.parent_platforms?.length > 0 && (
-                                    <div className="flex gap-3 mt-2">
-                                        {game.parent_platforms.map(({platform}) => (
-                                            <PlatformIcon key={platform.id} slug={platform.slug}/>
-                                        ))}
-                                    </div>
-                                )}
-                                <Link
-                                    to={`/game/${game.id}`}
-                                    className="mt-2 inline-block px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-                                >
-                                    ...
-                                </Link>
-                            </div>
+                                </div>
+                            </Link>
                         </div>
                     </SwiperSlide>
                 ))}
