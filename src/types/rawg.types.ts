@@ -7,7 +7,7 @@ export interface PlatformInfo {
     platform: {
         id: number;
         name: string;
-        slug: string; // удобно для выбора иконок
+        slug: string;
     };
 }
 
@@ -19,8 +19,8 @@ export interface Game {
     rating: number;
     ratings_count: number;
     metacritic: number;
-    genres: Genre[];              // 👈 добавляем
-    parent_platforms: PlatformInfo[]; // 👈 для иконок платформ
+    genres: Genre[];
+    parent_platforms: PlatformInfo[];
 }
 
 export interface GameDetails extends Game {

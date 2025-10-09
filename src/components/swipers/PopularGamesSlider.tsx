@@ -27,7 +27,7 @@ const PopularGamesSlider = () => {
 
 
             <button
-                className="custom-prev text-text-secondary hover:text-text bg-gradient-to-r from-gray-600 to-transperment rounded-sm col-start-1 col-end-2 row-start-2 row-end-3"
+                className="custom-prev cursor-pointer text-text-secondary hover:text-text bg-gradient-to-r from-gray-600 to-transperment rounded-sm col-start-1 col-end-2 row-start-2 row-end-3"
                 aria-label="previous"
             >
                 <ArrowSvg className="w-10 h-20"/>
@@ -36,7 +36,7 @@ const PopularGamesSlider = () => {
                 <div className="custom-pagination flex"/>
             </div>
             <button
-                className="custom-next text-text-secondary hover:text-text bg-gradient-to-l from-gray-600 to-transperment rounded-sm col-start-3 col-end-4 row-start-2 row-end-3"
+                className="custom-next cursor-pointer text-text-secondary hover:text-text bg-gradient-to-l from-gray-600 to-transperment rounded-sm col-start-3 col-end-4 row-start-2 row-end-3"
                 aria-label="next"
             >
                 <ArrowSvg className="w-10 h-20 rotate-180"/>
@@ -96,9 +96,8 @@ const PopularGamesSlider = () => {
                                         </div>
                                         <div className="flex items-center justify-between w-full">
                                             {game.released && (
-                                                <div
-                                                    className="text-sm text-text-secondary font-normal px-3 py-1 rounded-md  bg-bg/65">
-                                                    Release Date: <span className={'text-text font-medium'}>
+                                                <div className="text-sm text-text-secondary font-normal px-3 py-1 rounded-md  bg-bg/65">
+                                                    Release Date: <span className={'ml-2 text-text font-medium'}>
                                             {new Date(game.released).toLocaleDateString('En-en', {
                                                 year: 'numeric',
                                                 month: 'short',
