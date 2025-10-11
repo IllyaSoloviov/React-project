@@ -21,8 +21,7 @@ const GamePage = () => {
                         alt={game.name}
                         className="w-full h-64 md:h-96 xl:h-128 2xl:h-[30rem] object-cover object-top"
                     />
-                    <div
-                        className="absolute inset-0 bg-gradient-to-t from-bg-secondary via-bg-secondary/45 to-transparent"/>
+                    <div className="absolute inset-0 bg-gradient-to-t from-bg-secondary via-bg-secondary/45 via-bg-transparent to-transparent"/> <div/>
                     <div className="absolute bottom-0 left-0 p-6 md:p-8">
                         <h1 className="text-4xl md:text-5xl font-extrabold text-text tracking-tight">{game.name}</h1>
                         <p className="text-text-secondary mt-2 text-lg">

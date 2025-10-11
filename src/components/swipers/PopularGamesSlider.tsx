@@ -12,15 +12,14 @@ import PlatformIcon from "@/components/platform-icon/PlatformIcon.tsx";
 
 
 const PopularGamesSlider = () => {
-    const {data: games, isLoading} = useGamesQuery("-rating,-ratings_count", 9);
+    const {data: games, isLoading} = useGamesQuery("-rating,-ratings_count", 12);
 
     if (isLoading) return <div>Loading...</div>;
 
 
 
     return (
-        <div
-            className="grid grid-cols-[auto_1fr_auto] grid-rows-[auto_1fr_auto] items-center gap-1 justify-items-center">
+        <div className="grid grid-cols-[auto_1fr_auto] grid-rows-[auto_1fr_auto] items-center gap-1 justify-items-center">
             <h2 className="mx-4 text-3xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-transparent bg-clip-text col-start-2 col-end-3 row-start-1 row-end-2 justify-self-start">
                 Popular games
             </h2>
@@ -49,7 +48,7 @@ const PopularGamesSlider = () => {
                 observer={true}
                 observeParents={true}
                 loop={false}
-                className="w-full max-w-7xl py-4 col-start-2 col-end-3 row-start-2 row-end-3"
+                className="w-full max-w-7xl py-4  col-start-2 col-end-3 row-start-2 row-end-3"
                 breakpoints={{
                     320: {slidesPerView: 1, slidesPerGroup: 1},
                     640: {slidesPerView: 2, slidesPerGroup: 2},
@@ -84,7 +83,7 @@ const PopularGamesSlider = () => {
                                             )}
 
                                             {game.genres?.length > 0 && (
-                                                <div className="flex flex-wrap gap-2 justify-start max-w-1/2 ">
+                                                <div className="flex flex-wrap gap-2 justify-start">
                                                     {game.genres.map((genre) => (
                                                         <span key={genre.id}
                                                               className="text-xs text-text-span px-3 py-1 rounded-md  bg-bg-span/33">

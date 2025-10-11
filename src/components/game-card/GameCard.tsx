@@ -15,15 +15,15 @@ const GameCard = ({ game }: GameCardProps) => {
                     className="w-full h-full object-cover"
                 />
 
-                <div className="absolute -bottom-2/4 left-0 w-full h-full bg-bg/65 text-white overflow-hidden
+                <div className="absolute -bottom-2/3 left-0 w-full h-full bg-bg/65 text-white overflow-hidden
                                group-hover:bottom-0 transition-all duration-500 ease-in-out
-                               flex flex-col gap-2">
-                    <div className="w-full flex-1 flex items-center justify-center px-4 py-1">
-                        <h3 className="text-lg md:text-xl w-full text-text font-semibold px-4 py-1 my-1 rounded-md text-center bg-bg/65">
+                               flex flex-col">
+                    <div className="w-full flex-1 flex items-center justify-center">
+                        <h3 className="text-lg md:text-xl w-full text-text font-semibold px-4 py-1 my-1 mx-2 rounded-md text-center bg-bg/65">
                             {game.name}
                         </h3>
                     </div>
-                    <div className="w-full flex-1 flex flex-col justify-around px-4 text-xs md:text-sm">
+                    <div className="w-full flex-1/2 flex flex-col justify-around px-4 text-xs md:text-sm">
                         <div className="flex items-center justify-between w-full">
                             {game.parent_platforms?.length > 0 && (
                                 <div className="flex gap-2 items-self-start max-w-1/2 px-2 py-1 rounded-md bg-bg/65">
