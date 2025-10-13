@@ -1,4 +1,5 @@
 import {SettingsMenu} from "@/components/header/settings-menu/SettingsMenu.tsx";
+import {Link} from "react-router-dom";
 
 const Header = () => {
     return (
@@ -7,7 +8,7 @@ const Header = () => {
             <div></div>
             <div className="flex items-center gap-4 ">
                 <div className="text-2xl font-bold">
-                    React Game
+                    <Link to={'/'} >React Game</Link>
                 </div>
             </div>
             <SettingsMenu/>

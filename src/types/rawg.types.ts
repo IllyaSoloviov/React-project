@@ -31,3 +31,8 @@ export interface GameResponse {
     count: number;
     results: Game[];
 }
+
+ export interface Screenshot {
+    id: number;
+    image: string;
+}

@@ -12,5 +12,16 @@ export const GameService = {
             method: 'GET',
             url: getGameDetails(id),
         }),
+    getScreenshots: (id: string) =>
+        instance({
+            method: "GET",
+            url: `/games/${id}/screenshots`,
+        }),
+    getVideos: (id: string) =>
+        instance({
+            method: "GET",
+            url: `/games/${id}/movies`,
+        }),
+
 };
 

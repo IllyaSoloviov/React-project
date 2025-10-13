@@ -6,6 +6,7 @@ import {useGamesQuery} from "@/hooks/usePopularGamesQuery.ts";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
 import type {Game} from "@/types/rawg.types.ts";
 import {ArrowSvg} from "@/assets/icons/Arrow.svg.tsx";
 import PlatformIcon from "@/components/platform-icon/PlatformIcon.tsx";

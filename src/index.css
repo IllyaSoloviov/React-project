@@ -4,6 +4,7 @@
   /* 🌞 Светлая тема */
   --color-bg: #dfe1e4;
   --color-bg-secondary: #c0d5eb;
+  --color-contrast: #1E1E1E;
   --color-text: #11171e;
   --color-text-secondary: #34383e;
   --color-accent: #0EA5E9;
@@ -19,6 +20,7 @@
   /* 🌙 Тёмная тема */
   --color-bg: #1E1E1E;
   --color-bg-secondary: #171A21;
+  --color-contrast: #dfe1e4;
   --color-text: #eff3f2;
   --color-text-secondary: #e3dede;
   --color-accent: #c9f0f4;
