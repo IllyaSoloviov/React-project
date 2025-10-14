@@ -7,14 +7,14 @@ export default function ThemeSwitcher() {
         <button
             onClick={toggleTheme}
             className={`
-                relative inline-flex h-6 w-11 items-center rounded-full
+                relative inline-flex h-7 w-12 items-center rounded-full
                 transition-colors duration-300 ease-in-out bg-
                 ${theme === "dark" ? "bg-contrast" : "bg-text-secondary"}
             `}
         >
             <span
                 className={`
-                    inline-block h-4 w-4 transform rounded-full bg-bg
+                    inline-block h-5 w-5 transform rounded-full bg-bg
                     transition-transform duration-300 ease-in-out
                     ${theme === "dark" ? "translate-x-6" : "translate-x-1"}
                 `}

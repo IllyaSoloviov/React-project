@@ -14,6 +14,7 @@ import type {Swiper as SwiperType} from "swiper";
 import type {Screenshot} from "@/types/rawg.types.ts";
 import PlatformIcon from "@/components/platform-icon/PlatformIcon.tsx";
 import CommentsSection from "@/components/comments/CommentsSection.tsx";
+import {useTranslation} from "react-i18next";
 
 const GamePage = () => {
     const {id} = useParams() as { id: string };
@@ -22,12 +23,16 @@ const GamePage = () => {
     const {data: video} = useGameVideosQuery(id!);
     const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
+    const { t, i18n } = useTranslation();
     console.log(game)
 
     if (isLoading)
         return (
-            <div className="flex justify-center items-center h-screen text-text-secondary">
-                loading...
+            <div className="flex flex-col justify-center items-center h-screen bg-gradient-to-r from-bg-secondary via-bg3 to-bg-secondary text-text-secondary">
+                <div className="relative flex items-center justify-center">
+                    <div className="w-16 h-16 border-4 border-accent/30 border-t-accent rounded-full animate-spin"></div>
+                </div>
+                <p className="mt-6 text-lg tracking-wide animate-pulse">Loading game details...</p>
             </div>
         );
 
@@ -74,22 +79,22 @@ const GamePage = () => {
                             </p>
 
                             <div className="text-text-secondary text-sm m-0">
-                                <span className={'font-normal tracking-wide uppercase'}>Release Date:</span> <span
+                                <span className={'font-normal tracking-wide uppercase'}>{t("gamePage.releaseDate")}</span> <span
                                 className={'text-text ml-1 font-medium'}>
-                            {new Date(game.released).toLocaleDateString('en-US', {
+                            {new Date(game.released).toLocaleDateString(i18n.language === "uk" ? "uk-UA" : "en-US", {
                                 year: 'numeric', month: 'short', day: 'numeric'
                             })}</span>
                             </div>
                             <div className="flex justify-between items-center ">
                             <span
-                                className="font-semibold text-text-secondary">Rating</span>
+                                className="font-semibold text-text-secondary">{t("gamePage.rating")}</span>
                                 <div className="text-right">
                                     <p className="font-bold text-text text-lg">
                                         {game.rating}
                                         <span className="text-text-secondary text-sm font-normal"> / 5</span>
                                     </p>
                                     <p className="text-xs text-text-secondary mt-[-4px]">
-                                        {game.ratings_count} votes
+                                        {game.ratings_count} {t("gamePage.votes")}
                                     </p>
                                 </div>
                             </div>
@@ -134,7 +139,7 @@ const GamePage = () => {
                                             poster={game.background_image}
                                         >
                                             <source src={item.url} type="video/mp4"/>
-                                            Your browser does not support HTML5 video. {/* Already English */}
+                                            {t("gamePage.videoFallback")}
                                         </video>
                                     ) : (
                                         <img
@@ -188,7 +193,7 @@ const GamePage = () => {
                 </div>
 
 
-                <div className="w-full mt-8 text-text mb-6">
+                <div className="w-full mt-4 text-text">
                     {game.genres?.length > 0 && (
                         <div className="flex flex-wrap gap-1 justify-end items-center">
                             {game.genres.map((genre) => (
@@ -198,9 +203,9 @@ const GamePage = () => {
                             ))}
                         </div>
                     )}
-                    <div className="">
+                    <div className="pb-4">
                         <h2 className="text-2xl font-bold border-b-2 border-accent/20 pb-2 mb-4">
-                            Description
+                            {t("gamePage.description")}
                         </h2>
                         <p className="text-text-secondary leading-relaxed whitespace-pre-line">
                             {game.description_raw}

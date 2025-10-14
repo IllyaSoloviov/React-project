@@ -1,7 +1,7 @@
 import PopularGamesSlider from "@/components/swipers/PopularGamesSlider.tsx";
 import GamesGrid from "@/components/games-grid/GamesGrid.tsx";
 import {GameSearch} from "@/components/game-search/GameSearch.tsx";
-
+import "@/config/i18n.ts"
 
 
 

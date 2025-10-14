@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 import type { Game } from "@/types/rawg.types";
 import PlatformIcon from "@/components/platform-icon/PlatformIcon.tsx";
+import {useTranslation} from "react-i18next";
+
+
 interface GameCardProps {
     game: Game;
 }
 
 const GameCard = ({ game }: GameCardProps) => {
+    const { t, i18n } = useTranslation();
+
     return (
         <div className="relative group rounded-xl shadow-xl/60 overflow-hidden aspect-[4/3]">
             <Link to={`/game/${game.id}`}>
@@ -46,8 +51,8 @@ const GameCard = ({ game }: GameCardProps) => {
                         <div className="flex items-center justify-between w-full mt-2">
                             {game.released && (
                                 <div className="text-sm text-text-secondary font-normal px-3 py-1 rounded-md bg-bg/65">
-                                    Release: <span className={'ml-1 text-text font-medium'}>
-                                        {new Date(game.released).toLocaleDateString('en-GB', {
+                                    {t("mainPage.releaseDate")} <span className={'ml-1 text-text font-medium'}>
+                                        {new Date(game.released).toLocaleDateString(i18n.language === "uk" ? "uk-UA" : "en-US", {
                                             year: 'numeric', month: 'short', day: 'numeric'
                                         })}
                                     </span>

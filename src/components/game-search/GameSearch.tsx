@@ -3,12 +3,13 @@ import {useDebounce} from '@/hooks/useDebounce';
 import {useSearchGamesQuery} from '@/hooks/usePopularGamesQuery';
 import {Link} from 'react-router-dom';
 import {SearchSvg} from "@/assets/icons/Search.svg.tsx";
+import {useTranslation} from "react-i18next";
 
 export const GameSearch = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [submittedTerm, setSubmittedTerm] = useState(''); // для кнопки поиска
     const debouncedSearchTerm = useDebounce(submittedTerm || searchTerm, 500);
-
+    const { t } = useTranslation();
     const {data: games, isLoading} = useSearchGamesQuery(debouncedSearchTerm);
 
     const [isDropdownVisible, setDropdownVisible] = useState(false);
@@ -57,7 +58,7 @@ export const GameSearch = () => {
                     onChange={handleInputChange}
                     onKeyDown={handleKeyDown}
                     onFocus={() => searchTerm && setDropdownVisible(true)}
-                    placeholder="Search for a game..."
+                    placeholder={t("mainPage.searchGames")}
                     className="
             w-full px-4 py-2
             text-sm text-text

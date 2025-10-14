@@ -10,19 +10,29 @@ import 'swiper/css/pagination';
 import type {Game} from "@/types/rawg.types.ts";
 import {ArrowSvg} from "@/assets/icons/Arrow.svg.tsx";
 import PlatformIcon from "@/components/platform-icon/PlatformIcon.tsx";
+import {useTranslation} from "react-i18next";
 
 
 const PopularGamesSlider = () => {
     const {data: games, isLoading} = useGamesQuery("-rating,-ratings_count", 12);
+    const { t, i18n } = useTranslation();
 
-    if (isLoading) return <div>Loading...</div>;
+    if (isLoading)
+        return(
+        <div className="flex flex-col min-w-[800px] justify-center items-center h-screen bg-gradient-to-r from-bg-secondary via-bg3 to-bg-secondary text-text-secondary">
+            <div className="relative flex items-center justify-center">
+                <div className="w-16 h-16 border-4 border-accent/30 border-t-accent rounded-full animate-spin"></div>
+            </div>
+            <p className="mt-6 text-lg tracking-wide animate-pulse">Loading game details...</p>
+        </div>
+    );
 
 
 
     return (
         <div className="grid grid-cols-[auto_1fr_auto] grid-rows-[auto_1fr_auto] items-center gap-1 justify-items-center">
             <h2 className="mx-4 text-3xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-transparent bg-clip-text col-start-2 col-end-3 row-start-1 row-end-2 justify-self-start">
-                Popular games
+                {t("mainPage.popularGames")}
             </h2>
 
 
@@ -97,8 +107,8 @@ const PopularGamesSlider = () => {
                                         <div className="flex items-center justify-between w-full">
                                             {game.released && (
                                                 <div className="text-sm text-text-secondary font-normal px-3 py-1 rounded-md  bg-bg/65">
-                                                    Release Date: <span className={'ml-2 text-text font-medium'}>
-                                            {new Date(game.released).toLocaleDateString('En-en', {
+                                                    {t("mainPage.releaseDate")} <span className={'ml-2 text-text font-medium'}>
+                                            {new Date(game.released).toLocaleDateString(i18n.language === "uk" ? "uk-UA" :'En-en', {
                                                 year: 'numeric',
                                                 month: 'short',
                                                 day: 'numeric'

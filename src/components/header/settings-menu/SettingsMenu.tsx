@@ -1,14 +1,18 @@
 import { useState } from "react";
 import ThemeSwitcher from "@/components/theme-switcher/ThemeSwitcher.tsx";
 import {SettingsSvg} from "@/assets/icons/Settings.svg.tsx";
+import LangSwitcher from "@/components/lang-switcher/LangSwitcher.tsx";
+import { useTranslation } from "react-i18next";
+
 
 export const SettingsMenu = () => {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
+    const { t } = useTranslation();
 
     const toggleMenu = () => setIsOpen(prev => !prev);
 
     return (
-        <div className="relative flex flex-row items-center gap-4">
+        <div className="relative flex flex-row items-center gap-4 mr-4">
             <button
                 onClick={toggleMenu}
                 className="cursor-pointer transition-transform duration-500 z-20"
@@ -22,7 +26,7 @@ export const SettingsMenu = () => {
 
 
             <div
-                className={`absolute z-10 -top-1 -right-1 bg-bg rounded-xl shadow-lg/30 p-4 w-48 transform transition-all duration-300 origin-top ${
+                className={`absolute z-10 -top-1 -right-1 bg-bg rounded-xl shadow-lg/30 p-4 pt-9 w-48 transform transition-all duration-300 origin-top ${
                     isOpen
                         ? "opacity-100 scale-y-100"
                         : "opacity-0 scale-y-0 pointer-events-none"
@@ -31,27 +35,27 @@ export const SettingsMenu = () => {
                     transition: "opacity 0.3s ease-in, transform 0.3s ease",
                 }}
             >
-                <ul className="flex flex-col gap-2 text-text">
+                <ul className="flex flex-col gap-4 text-text">
                     <li className=" cursor-pointer">
                         <span className="hover:text-accent transition-colors">
-                            Profile
+                            {t("settings.profile")}
                         </span>
                     </li>
                     <li className="cursor-pointer flex items-center justify-between">
                         <span className="hover:text-accent transition-colors">
-                            Language
+                             {t("settings.language")}
                         </span>
-
+                        <LangSwitcher/>
                     </li>
                     <li className="cursor-pointer flex items-center justify-between">
                         <span className="hover:text-accent transition-colors">
-                            Theme
+                            {t("settings.theme")}
                         </span>
                         <ThemeSwitcher/>
                     </li>
                     <li className="cursor-pointer">
                         <span className="hover:text-accent transition-colors">
-                            Exit
+                            {t("settings.exit")}
                         </span>
                     </li>
                 </ul>

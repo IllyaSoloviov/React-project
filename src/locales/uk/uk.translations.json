@@ -1,0 +1,56 @@
+{
+  "settings": {
+    "profile": "Профіль",
+    "language": "Мова",
+    "theme": "Тема",
+    "exit": "Вихід"
+  },
+  "mainPage": {
+    "searchGames": "Пошук ігор...",
+    "popularGames": "Популярні ігри",
+    "allGames": "Усі ігри",
+    "sort": {
+      "rating": "Рейтинг",
+      "releaseDate": "Дата виходу",
+      "popularity": "Популярність",
+      "nameAZ": "Назва (A–Я)",
+      "nameZA": "Назва (Я–A)",
+      "metacritic": "Metacritic",
+      "releaseDateNewest": "Дата виходу (новіші)"
+    },
+    "releaseDate": "Дата виходу:",
+    "page": " Сторінка",
+    "previous": "Попередня",
+    "next": "Наступна"
+  },
+  "gameCard": {
+    "release": "Вихід"
+  },
+  "gamePage": {
+    "releaseDate": "Дата виходу",
+    "rating": "Рейтинг",
+    "votes": "голосів",
+    "metacritic": "Metacritic",
+    "description": "Опис",
+    "videoFallback": "Ваш браузер не підтримує HTML5 відео."
+  },
+  "comments": {
+    "title": "Коментарі",
+    "modal": {
+      "title": "Незаповнена форма",
+      "text": "Будь ласка, заповніть ім’я та коментар перед відправленням.",
+      "ok": "Гаразд"
+    },
+    "form": {
+      "title": "Залиште коментар",
+      "namePlaceholder": "Ваше ім’я",
+      "commentPlaceholder": "Ваш коментар...",
+      "submit": "Надіслати"
+    },
+    "empty": "Ще немає коментарів.",
+    "pagination": {
+      "previous": "Попередня",
+      "next": "Наступна"
+    }
+  }
+}

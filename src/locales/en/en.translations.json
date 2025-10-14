@@ -1,0 +1,56 @@
+{
+  "settings": {
+    "profile": "Profile",
+    "language": "Language",
+    "theme": "Theme",
+    "exit": "Exit"
+  },
+  "mainPage": {
+    "searchGames": "Search for a game...",
+    "popularGames": "Popular Games",
+    "allGames": "All Games",
+    "sort": {
+      "rating": "Rating",
+      "releaseDate": "Release Date",
+      "popularity": "Popularity",
+      "nameAZ": "Name (A-Z)",
+      "nameZA": "Name (Z-A)",
+      "metacritic": "Metacritic",
+      "releaseDateNewest": "Release Date (Newest)"
+    },
+    "releaseDate": "Release Date",
+    "page": "Page",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "gameCard": {
+    "release": "Release"
+  },
+  "gamePage": {
+    "releaseDate": "Release Date",
+    "rating": "Rating",
+    "votes": "votes",
+    "metacritic": "Metacritic",
+    "description": "Description",
+    "videoFallback": "Your browser does not support HTML5 video."
+  },
+  "comments": {
+    "title": "Comments",
+    "modal": {
+      "title": "Incomplete form",
+      "text": "Please fill in both your name and comment before submitting.",
+      "ok": "OK"
+    },
+    "form": {
+      "title": "Leave a comment",
+      "namePlaceholder": "Your name",
+      "commentPlaceholder": "Your comment...",
+      "submit": "Submit"
+    },
+    "empty": "No comments yet.",
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    }
+  }
+}
