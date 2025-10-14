@@ -39,3 +39,14 @@ export const useGameVideosQuery = (id: string) => {
             GameService.getVideos(id).then((res) => res.data),
     })
 }
+
+export const useSearchGamesQuery = (searchTerm: string, pageSize: number = 4) => {
+    return useQuery<Game[]>({
+        queryKey: ['search games', searchTerm],
+        queryFn: () =>
+            GameService.getAll(`search=${searchTerm}&page_size=${pageSize}`)
+                .then((res) => (res.data as GameResponse).results),
+        enabled: !!searchTerm,
+        staleTime: 1000 * 60 * 5,
+    });
+};

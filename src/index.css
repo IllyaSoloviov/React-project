@@ -3,14 +3,17 @@
 @theme {
   /* 🌞 Светлая тема */
   --color-bg: #dfe1e4;
-  --color-bg-secondary: #c0d5eb;
+  --color-bg-secondary: #89eafd;
+  --color-bg3: #5b9ee1;
+  --color-bg4: #7eb1ed;
+  --color-bg5: #c9dbf3;
   --color-contrast: #1E1E1E;
   --color-text: #11171e;
   --color-text-secondary: #34383e;
   --color-accent: #0EA5E9;
   --color-bg-span: #4bb9f8; /* 33% opacity */
   --color-text-span: #0369A1;
-  --color-accent-alt: #2563EB;
+  --color-accent-alt: #2b55b8;
   --color-error: #DC2626;
   --color-success: #16A34A;
   --color-warning: #D97706;
@@ -20,6 +23,9 @@
   /* 🌙 Тёмная тема */
   --color-bg: #1E1E1E;
   --color-bg-secondary: #171A21;
+  --color-bg3: #203248;
+  --color-bg4: #203248;
+  --color-bg5: #171A21;
   --color-contrast: #dfe1e4;
   --color-text: #eff3f2;
   --color-text-secondary: #e3dede;

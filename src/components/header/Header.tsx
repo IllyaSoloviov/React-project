@@ -4,14 +4,12 @@ import {Link} from "react-router-dom";
 const Header = () => {
     return (
         <header>
-            <div className="bg-bg text-text shadow-xl/30 shadow-blue-650 p-4 flex items-center justify-between" >
-            <div></div>
-            <div className="flex items-center gap-4 ">
-                <div className="text-2xl font-bold">
-                    <Link to={'/'} >React Game</Link>
+            <div
+                className="relative bg-linear-to-t from-bg-secondary to-bg to-50% text-text shadow-xl/15 shadow-blue-650 p-4 flex items-center justify-between">
+                <div className="flex gap-4 text-center text-2xl font-bold">
+                    <Link to={'/'}>React Game</Link>
                 </div>
-            </div>
-            <SettingsMenu/>
+                <SettingsMenu/>
             </div>
         </header>
     );

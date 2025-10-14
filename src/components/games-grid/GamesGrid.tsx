@@ -53,7 +53,7 @@ const GamesGrid = () => {
                         id="sort-select"
                         value={ordering}
                         onChange={handleOrderingChange}
-                        className="bg-bg border border-gray-600 rounded-md px-3 py-2 text-text focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="bg-bg border border-gray-600 shadow-md rounded-md px-3 py-2 text-text focus:outline-none "
                     >
                         <option value="-rating">Rating</option>
                         <option value="-released">Release Date</option>

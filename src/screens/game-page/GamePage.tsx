@@ -13,6 +13,7 @@ import {FreeMode, Navigation, Thumbs} from "swiper/modules";
 import type {Swiper as SwiperType} from "swiper";
 import type {Screenshot} from "@/types/rawg.types.ts";
 import PlatformIcon from "@/components/platform-icon/PlatformIcon.tsx";
+import CommentsSection from "@/components/comments/CommentsSection.tsx";
 
 const GamePage = () => {
     const {id} = useParams() as { id: string };
@@ -45,14 +46,14 @@ const GamePage = () => {
     ];
 
     return (
-        <div className="flex-1 bg-bg-secondary flex flex-col justify-center items-center 2xl:p-8 overflow-y-scroll">
-            <div className={'w-full px-2 max-w-[500px] justify-start md:max-w-[700px] lg:max-w-[940px] flex flex-col lg:justify-center items-center space-y-4'}>
+        <div className="flex-1 bg-linear-to-r from-bg-secondary  via-bg3 to-bg-secondary flex flex-col justify-center items-center 2xl:px-8 gap-4">
+            <div className={'w-full flex-1 px-2 max-w-[500px] justify-start md:max-w-[700px] lg:max-w-[960px] flex flex-col lg:justify-center items-center bg-bg/60'}>
                 <h1 className=" font-bold text-2xl m-3 self-center md:self-start md:font-extrabold md:text-4xl text-text tracking-tight">
                     {game.name}
                 </h1>
 
-                <div className="flex flex-col xl:flex-row-reverse  justify-center items-center w-full gap-4 ">
-                    <div className="flex flex-col md:flex-row xl:flex-col justify-between gap-3 w-full">
+                <div className="flex flex-col xl:flex-row-reverse  justify-center items-start w-full gap-3 ">
+                    <div className="flex flex-col md:flex-row xl:flex-col w-full gap-3">
                         <div className="min-w-[324px] ">
                             <img
                                 src={game.background_image}
@@ -60,7 +61,7 @@ const GamePage = () => {
                                 className="w-full h-full object-cover aspect-[2.1/1] rounded-md"
                             />
                         </div>
-                        <div className="flex flex-col w-full gap-3 min-w-[324px]">
+                        <div className="flex flex-col w-full gap-2 min-w-[324px]">
                             {game.parent_platforms?.length > 0 && (
                                 <div className="flex gap-3 px-3 py-1 rounded-md bg-bg/65 w-fit">
                                     {game.parent_platforms.map(({platform}) => (
@@ -139,7 +140,7 @@ const GamePage = () => {
                                         <img
                                             src={item.url}
                                             alt={`screenshot-${index}`}
-                                            className="w-full object-cover rounded-md"
+                                            className="w-full object-cover rounded-md aspect-[16/9]"
                                         />
                                     )}
                                 </SwiperSlide>
@@ -176,7 +177,7 @@ const GamePage = () => {
                                             <img
                                                 src={item.url}
                                                 alt={`thumb-${index}`}
-                                                className="w-full max-h-24 object-cover rounded-md cursor-pointer opacity-70 hover:opacity-100 transition"
+                                                className="w-full max-h-24 object-cover rounded-md cursor-pointer opacity-70 hover:opacity-100 transition aspect-[16/9]"
                                             />
                                         )}
                                     </SwiperSlide>
@@ -187,7 +188,16 @@ const GamePage = () => {
                 </div>
 
 
-                <div className="w-full mt-8 text-text">
+                <div className="w-full mt-8 text-text mb-6">
+                    {game.genres?.length > 0 && (
+                        <div className="flex flex-wrap gap-1 justify-end items-center">
+                            {game.genres.map((genre) => (
+                                <span key={genre.id} className="text-xs text-text-span px-2 py-1 rounded-md bg-bg-span/33">
+                                            {genre.name}
+                                        </span>
+                            ))}
+                        </div>
+                    )}
                     <div className="">
                         <h2 className="text-2xl font-bold border-b-2 border-accent/20 pb-2 mb-4">
                             Description
@@ -197,7 +207,11 @@ const GamePage = () => {
                         </p>
                     </div>
                 </div>
+            </div>
 
+            <div
+                className={'w-full flex-1 px-2 max-w-[500px] justify-start md:max-w-[700px] lg:max-w-[960px] flex flex-col lg:justify-center items-center bg-bg/60 space-y-4  mb-6 overflow-hidden'}>
+                <CommentsSection/>
             </div>
         </div>
     );
