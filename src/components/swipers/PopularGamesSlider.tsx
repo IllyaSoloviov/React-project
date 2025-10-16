@@ -15,25 +15,29 @@ import {useTranslation} from "react-i18next";
 
 const PopularGamesSlider = () => {
     const {data: games, isLoading} = useGamesQuery("-rating,-ratings_count", 12);
-    const { t, i18n } = useTranslation();
+    const {t, i18n} = useTranslation();
 
     if (isLoading)
-        return(
-        <div className="flex flex-col min-w-[800px] justify-center items-center h-screen bg-gradient-to-r from-bg-secondary via-bg3 to-bg-secondary text-text-secondary">
-            <div className="relative flex items-center justify-center">
-                <div className="w-16 h-16 border-4 border-accent/30 border-t-accent rounded-full animate-spin"></div>
+        return (
+            <div
+                className="flex flex-col min-w-[800px] justify-center items-center h-screen bg-gradient-to-r from-bg-secondary via-bg3 to-bg-secondary text-text-secondary">
+                <div className="relative flex items-center justify-center">
+                    <div
+                        className="w-16 h-16 border-4 border-accent/30 border-t-accent rounded-full animate-spin"></div>
+                </div>
+                <p className="mt-6 text-lg tracking-wide animate-pulse">Loading game details...</p>
             </div>
-            <p className="mt-6 text-lg tracking-wide animate-pulse">Loading game details...</p>
-        </div>
-    );
-
+        );
 
 
     return (
-        <div className="grid grid-cols-[auto_1fr_auto] grid-rows-[auto_1fr_auto] items-center gap-1 justify-items-center">
-            <h2 className="mx-4 text-3xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-transparent bg-clip-text col-start-2 col-end-3 row-start-1 row-end-2 justify-self-start">
-                {t("mainPage.popularGames")}
-            </h2>
+        <div className="grid grid-cols-[auto_1fr_auto] grid-rows-[auto_1fr_auto] items-center gap-1 justify-items-center mt-10">
+
+            <div className=" w-[calc(100%-2rem)]  bg-bg/65 rounded-xl col-start-2 col-end-3 row-start-1 row-end-2 self-start">
+                <h2 className="my-3 mx-4 text-3xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-transparent bg-clip-text ">
+                    {t("mainPage.popularGames")}
+                </h2>
+            </div>
 
 
             <button
@@ -68,7 +72,8 @@ const PopularGamesSlider = () => {
             >
                 {games?.map((game: Game) => (
                     <SwiperSlide key={game.id} className="rounded-lg overflow-hidden">
-                        <div className="mt-3 mb-10 mx-4 relative group rounded-xl shadow-xl/60 overflow-hidden aspect-[3/4]">
+                        <div
+                            className="mt-10 mb-10 mx-4 relative group rounded-xl shadow-xl/60 overflow-hidden aspect-[3/4]">
                             <Link to={`/game/${game.id}`}>
                                 <img
                                     src={game.background_image}
@@ -106,9 +111,11 @@ const PopularGamesSlider = () => {
                                         </div>
                                         <div className="flex items-center justify-between w-full">
                                             {game.released && (
-                                                <div className="text-sm text-text-secondary font-normal px-3 py-1 rounded-md  bg-bg/65">
-                                                    {t("mainPage.releaseDate")} <span className={'ml-2 text-text font-medium'}>
-                                            {new Date(game.released).toLocaleDateString(i18n.language === "uk" ? "uk-UA" :'En-en', {
+                                                <div
+                                                    className="text-sm text-text-secondary font-normal px-3 py-1 rounded-md  bg-bg/65">
+                                                    {t("mainPage.releaseDate")} <span
+                                                    className={'ml-2 text-text font-medium'}>
+                                            {new Date(game.released).toLocaleDateString(i18n.language === "uk" ? "uk-UA" : 'En-en', {
                                                 year: 'numeric',
                                                 month: 'short',
                                                 day: 'numeric'

@@ -5,7 +5,7 @@ import Footer from "../footer/Footer.tsx";
 
 export default function Layout(){
     return (
-        <div className={"flex flex-col min-h-screen min-w-screen"}>
+        <div className={"relative w-full h-auto overflow-y-auto flex flex-col justify-center min-h-dvh "}>
             <Header />
             <>
                 <Outlet/>

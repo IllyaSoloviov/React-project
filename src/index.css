@@ -38,7 +38,9 @@
   --color-warning: #F59E0B;
 }
 
+
 body {
+  width: 100%;
   margin: 0;
   display: flex;
   place-items: center;
