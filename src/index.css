@@ -28,7 +28,7 @@
   --color-bg5: #171A21;
   --color-contrast: #dfe1e4;
   --color-text: #eff3f2;
-  --color-text-secondary: #e3dede;
+  --color-text-secondary: #a5a2a2;
   --color-accent: #c9f0f4;
   --color-bg-span: #1272b6; /* 33% opacity */
   --color-text-span: #6bc5fa;
@@ -44,7 +44,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 400px;
   min-height: 100vh;
 }
 

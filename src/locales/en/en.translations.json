@@ -3,7 +3,10 @@
     "profile": "Profile",
     "language": "Language",
     "theme": "Theme",
-    "exit": "Exit"
+    "exit": "Exit",
+    "home": "Home",
+    "Categories": "Categories",
+    "title": "Settings"
   },
   "mainPage": {
     "searchGames": "Search for a game...",

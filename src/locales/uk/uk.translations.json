@@ -3,7 +3,10 @@
     "profile": "Профіль",
     "language": "Мова",
     "theme": "Тема",
-    "exit": "Вихід"
+    "exit": "Вихід",
+    "home": "Головна",
+    "Categories": "Категорії",
+    "title": "Налаштування"
   },
   "mainPage": {
     "searchGames": "Пошук ігор...",

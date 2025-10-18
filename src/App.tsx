@@ -5,6 +5,7 @@ import {RouterEnum} from "./config/RouterEnum.ts";
 import Main from "./screens/main/Main.tsx";
 import Providers from "@/providers/Providers.tsx";
 import GamePage from "@/screens/game-page/GamePage.tsx";
+import GenrePage from "@/screens/game-page/ganre-page/GenrePage.tsx";
 
 
 
@@ -17,6 +18,7 @@ function App() {
                     {/*компоненти які рендеряться у Layout і з ними відображається header*/}
                     <Route index element={<Main/>}/>
                     <Route path="/game/:id" element={<GamePage/>} />
+                    <Route path="/genre/:slug" element={<GenrePage />} />
                 </Route>
             </Routes>
         </Providers>

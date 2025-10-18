@@ -23,7 +23,7 @@ const GamesGrid = () => {
     const {data, isLoading, isError, error} = useGamesGridQuery(
         ordering,
         page,
-        PAGE_SIZE
+        PAGE_SIZE,
     );
 
     const options = [

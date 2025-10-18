@@ -20,7 +20,7 @@ const PopularGamesSlider = () => {
     if (isLoading)
         return (
             <div
-                className="flex flex-col min-w-[800px] justify-center items-center h-screen bg-gradient-to-r from-bg-secondary via-bg3 to-bg-secondary text-text-secondary">
+                className="my-10 flex flex-col  w-full max-w-7xl h-[500px] md:h-[550px] lg:h-[600px] xl:h-[650px] justify-center items-center bg-gradient-to-r from-bg-secondary via-bg3 to-bg-secondary text-text-secondary">
                 <div className="relative flex items-center justify-center">
                     <div
                         className="w-16 h-16 border-4 border-accent/30 border-t-accent rounded-full animate-spin"></div>
@@ -63,7 +63,7 @@ const PopularGamesSlider = () => {
                 observer={true}
                 observeParents={true}
                 loop={false}
-                className="w-full max-w-7xl py-4  col-start-2 col-end-3 row-start-2 row-end-3"
+                className="w-full max-w-7xl col-start-2 col-end-3 row-start-2 row-end-3"
                 breakpoints={{
                     320: {slidesPerView: 1, slidesPerGroup: 1},
                     640: {slidesPerView: 2, slidesPerGroup: 2},

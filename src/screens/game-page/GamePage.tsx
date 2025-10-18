@@ -113,7 +113,7 @@ const GamePage = () => {
                     </div>
 
 
-                    <div className="w-full max-w-[400px] sm:max-w-[600px] md:max-w-full xl:max-w-[600px] select-none">
+                    <div className="w-full max-w-[500px] sm:max-w-[600px] md:max-w-full xl:max-w-[600px] select-none">
                         <Swiper
                             style={
                                 {

@@ -1,6 +1,6 @@
 const SkeletonCard = () => {
     return (
-        <div className="animate-pulse min-w-[250px] bg-bg-secondary/70 rounded-xl overflow-hidden shadow-md ">
+        <div className="animate-pulse min-w-[280px] bg-bg-secondary/70 rounded-xl overflow-hidden shadow-md ">
             <div className="w-full h-48 bg-bg3/60 "></div>
             <div className="p-3 space-y-2">
                 <div className="h-4 bg-bg3/80 rounded w-3/4"></div>

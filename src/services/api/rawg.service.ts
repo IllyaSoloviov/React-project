@@ -22,6 +22,11 @@ export const GameService = {
             method: "GET",
             url: `/games/${id}/movies`,
         }),
+    getGenres: () =>
+        instance({
+            method: "GET",
+            url: "/genres",
+        }),
 
 };
 

@@ -15,8 +15,7 @@ export default function LangSwitcher() {
             onClick={toggleLanguage}
             className={`
                 relative inline-flex h-7 w-12 items-center rounded-full
-                transition-colors duration-300 ease-in-out
-                ${isEnglish ? "bg-contrast" : "bg-text-secondary"}
+                transition-colors duration-300 ease-in-out bg-contrast
             `}
         >
             <span

@@ -8,8 +8,7 @@ export default function ThemeSwitcher() {
             onClick={toggleTheme}
             className={`
                 relative inline-flex h-7 w-12 items-center rounded-full
-                transition-colors duration-300 ease-in-out bg-
-                ${theme === "dark" ? "bg-contrast" : "bg-text-secondary"}
+                transition-colors duration-300 ease-in-out bg-contrast
             `}
         >
             <span

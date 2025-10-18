@@ -12,7 +12,7 @@ const GameCard = ({ game }: GameCardProps) => {
     const { t, i18n } = useTranslation();
 
     return (
-        <div className="relative group rounded-xl shadow-xl/60 overflow-hidden aspect-[4/3]">
+        <div className="relative min-w-[300px] group rounded-xl shadow-xl/60 overflow-hidden aspect-[4/3]">
             <Link to={`/game/${game.id}`}>
                 <img
                     src={game.background_image}
