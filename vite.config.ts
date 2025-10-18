@@ -13,7 +13,7 @@ export default defineConfig({
         tailwindcss(),
         react(),
     ],
-    base: '/<React-project>/',
+    base: process.env.NODE_ENV === "production" ? "/React-project/" : "/",
     resolve: {
         alias: {
             '@': path.resolve(__dirname, 'src'),
